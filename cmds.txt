@@ -1,0 +1,7 @@
+pip install -r requirements.txt
+// -v attaches a volume so that changes in the code are pushed to the container (need to refresh)
+docker build -t fastapi-image .
+docker run --name fastapi-container -p 80:80 -d -v $(pwd):/code fastapi-image
+docker-compose up
+docker-compose down
+docker-compose up --build -d
